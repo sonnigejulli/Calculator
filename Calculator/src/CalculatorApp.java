@@ -24,17 +24,16 @@ public class CalculatorApp {
 	public static void main(String[] args) throws FileNotFoundException {
 
 
-System.out.println("Enter a number in range [-20 to 20]: ");
 		while(true) {
 			
-
+			System.out.println("Enter a number in range [-20 to 20]: ");
 			Scanner fromUser = new Scanner(System.in);
 			String input = fromUser.nextLine();
 			
 			
-//			if("break".equalsIgnoreCase(input)){
-//				break;	
-//			}
+		if("break".equalsIgnoreCase(input)){
+			break;	
+		}
 			Calculations calc1 = new Calculations();
 			double number1 =  Double.parseDouble(input);
 			validateNumber(number1);
@@ -58,16 +57,18 @@ System.out.println("Enter a number in range [-20 to 20]: ");
 			System.out.println("Enter an operation +, -, *, /");
 			calc1.setOperation(fromUser.nextLine());
 			calc1.calculate();
-			
+		}
 		}
 
-	}
+//	}
 	public static void validateNumber(double num) {
+		Scanner fromUser = new Scanner(System.in);
 			
-		if (num>20 || num<-20) {
+		if (num>20 || num<-20) { 
 			System.out.println("Enter a valid number: ");
-		} 
+			double num1 =  fromUser.nextDouble();
+			validateNumber(num1);
 	}
-
-	
+	} 
 }
+	
