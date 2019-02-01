@@ -38,7 +38,7 @@ System.out.println("Enter a number in range [-20 to 20]: ");
 			Calculations calc1 = new Calculations();
 			double number1 =  Double.parseDouble(input);
 			validateNumber(number1);
-			calc1.number1 = number1;
+			calc1.setNumber1(number1);
 			
 //			if (number1>20 || number1<-20) {
 //				System.out.println("Enter a valid number: ");
@@ -54,9 +54,9 @@ System.out.println("Enter a number in range [-20 to 20]: ");
 //				System.out.println("Enter a valid number: ");
 //				continue;
 //			}
-			calc1.number2 = number2;
+			calc1.setNumber2(number2);
 			System.out.println("Enter an operation +, -, *, /");
-			calc1.operation = fromUser.nextLine();
+			calc1.setOperation(fromUser.nextLine());
 			calc1.calculate();
 			
 		}

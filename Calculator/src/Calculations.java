@@ -8,27 +8,27 @@ public class Calculations {
 	private double number1, number2;
 	private String operation;
 
-	private double getNumber1() {
+	double getNumber1() {
 		return number1;
 	}
 
-	private void setNumber1(double number1) {
+	void setNumber1(double number1) {
 		this.number1 = number1;
 	}
 
-	private double getNumber2() {
+	double getNumber2() {
 		return number2;
 	}
 
-	private void setNumber2(double number2) {
+	void setNumber2(double number2) {
 		this.number2 = number2;
 	}
 
-	private String getOperation() {
+	String getOperation() {
 		return operation;
 	}
 
-	private void setOperation(String operation) {
+	void setOperation(String operation) {
 		this.operation = operation;
 	}
 
