@@ -32,9 +32,9 @@ System.out.println("Enter a number in range [-20 to 20]: ");
 			String input = fromUser.nextLine();
 			
 			
-			if("break".equalsIgnoreCase(input)){
-				break;	
-			}
+//			if("break".equalsIgnoreCase(input)){
+//				break;	
+//			}
 			Calculations calc1 = new Calculations();
 			double number1 =  Double.parseDouble(input);
 			validateNumber(number1);

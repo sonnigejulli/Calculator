@@ -5,7 +5,9 @@ import java.util.Scanner;
 
 public class Calculations {
 
-	double number1, number2;
+	private double number1, number2;
+	private String operation;
+
 	private double getNumber1() {
 		return number1;
 	}
@@ -21,8 +23,6 @@ public class Calculations {
 	private void setNumber2(double number2) {
 		this.number2 = number2;
 	}
-
-	String operation;
 
 	private String getOperation() {
 		return operation;
