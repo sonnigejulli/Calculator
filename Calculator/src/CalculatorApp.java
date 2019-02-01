@@ -1,5 +1,6 @@
+
 /*
- * Task
+ Task
 
 Write a small calculator console application that will follow next
 requirements:
@@ -16,47 +17,49 @@ arrange application structure according to OOP
 Create your personal Git repo with the results and application sources
 */
 import java.io.FileNotFoundException;
-import java.io.PrintWriter;
-import java.time.LocalDateTime;
 import java.util.Scanner;
 
+public class CalculatorApp { 
 
-public class CalculatorApp {
 	public static void main(String[] args) throws FileNotFoundException {
 
-		double result, number1, number2;
-		String action;
-		Scanner fromUser = new Scanner (System.in);
-		PrintWriter writer = new PrintWriter("C:\\Users\\Victoria_Kiriyenko\\eclipse-workspace\\calc_file");
-		LocalDateTime now = LocalDateTime.now();
-		System.out.println("Enter a number in range [-20 to 20]: ");
-		number1=Double.parseDouble(fromUser.nextLine());
-		
-		
-		System.out.println("Enter a number in range [-20 to 20]: ");
-		number2=Double.parseDouble(fromUser.nextLine());
 
-		System.out.println("Enter an action +, -, *, /");
-		action = fromUser.nextLine();
+System.out.println("Enter a number in range [-20 to 20]: ");
+		while(true) {
+			
 
-		if (action.equals("/") && number2 == 0) {
-			System.out.println("Cannot divide to 0");
-			return;
-		} else if (action.equals("-")) {
-			result = number1 - number2;
-		} else if (action.equals("*")) {
-			result = number1 * number2;
-		} else if (action.equals("/")) {
-			result = number1 / number2;
-		} else if (action.equals("+")) {
-			result = number1 + number2;
-		} else {
-			result = 0;
+			Scanner fromUser = new Scanner(System.in);
+			String input = fromUser.nextLine();
+			Number number1 = new Number();
+			
+			if("break".equalsIgnoreCase(input)){
+				break;	
+			}
+			Calculations calc1 = new Calculations();
+//			double number1 = Double.parseDouble(input);
+			calc1.number1 = number1.validateNumber();
+			
+//			if (number1>20 || number1<-20) {
+//				System.out.println("Enter a valid number: ");
+//				continue;
+//			}
+			
+			
+			System.out.println("Enter a number in range [-20 to 20]: ");
+			double number2 = Double.parseDouble(fromUser.nextLine());
+			
+			if (number2>20 || number2<-20) {
+				System.out.println("Enter a valid number: ");
+				continue;
+			}
+			calc1.number2 = number2;
+			System.out.println("Enter an action +, -, *, /");
+			calc1.action = fromUser.nextLine();
+			calc1.action();
+			
 		}
-		
-	    writer.println(result);
-	    writer.println(now);
-	    writer.close();
-	    fromUser.close();
+
 	}
+
+	
 }
