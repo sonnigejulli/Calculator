@@ -30,14 +30,15 @@ System.out.println("Enter a number in range [-20 to 20]: ");
 
 			Scanner fromUser = new Scanner(System.in);
 			String input = fromUser.nextLine();
-			Number number1 = new Number();
+			
 			
 			if("break".equalsIgnoreCase(input)){
 				break;	
 			}
 			Calculations calc1 = new Calculations();
-//			double number1 = Double.parseDouble(input);
-			calc1.number1 = number1.validateNumber();
+			double number1 =  Double.parseDouble(input);
+			validateNumber(number1);
+			calc1.number1 = number1;
 			
 //			if (number1>20 || number1<-20) {
 //				System.out.println("Enter a valid number: ");
@@ -47,18 +48,25 @@ System.out.println("Enter a number in range [-20 to 20]: ");
 			
 			System.out.println("Enter a number in range [-20 to 20]: ");
 			double number2 = Double.parseDouble(fromUser.nextLine());
+			validateNumber(number2);
 			
-			if (number2>20 || number2<-20) {
-				System.out.println("Enter a valid number: ");
-				continue;
-			}
+//			if (number2>20 || number2<-20) {
+//				System.out.println("Enter a valid number: ");
+//				continue;
+//			}
 			calc1.number2 = number2;
-			System.out.println("Enter an action +, -, *, /");
-			calc1.action = fromUser.nextLine();
-			calc1.action();
+			System.out.println("Enter an operation +, -, *, /");
+			calc1.operation = fromUser.nextLine();
+			calc1.calculate();
 			
 		}
 
+	}
+	public static void validateNumber(double num) {
+			
+		if (num>20 || num<-20) {
+			System.out.println("Enter a valid number: ");
+		} 
 	}
 
 	

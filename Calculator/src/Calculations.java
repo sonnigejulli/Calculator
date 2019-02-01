@@ -22,32 +22,32 @@ public class Calculations {
 		this.number2 = number2;
 	}
 
-	String action;
+	String operation;
 
-	private String getAction() {
-		return action;
+	private String getOperation() {
+		return operation;
 	}
 
-	private void setAction(String action) {
-		this.action = action;
+	private void setOperation(String operation) {
+		this.operation = operation;
 	}
 
 	Scanner fromUser = new Scanner(System.in);
 
-	public void action() throws FileNotFoundException {
+	public void calculate() throws FileNotFoundException {
 		try (PrintWriter writer = new PrintWriter("C:\\Users\\Victoria_Kiriyenko\\eclipse-workspace\\calc_file")) {
 			LocalDateTime now = LocalDateTime.now();
 			double result = 0;
-			if (action.equals("/") && number2 == 0) {
+			if (operation.equals("/") && number2 == 0) {
 				System.out.println("Cannot divide to 0");
 				return;
-			} else if (action.equals("-")) {
+			} else if (operation.equals("-")) {
 				result = number1 - number2;
-			} else if (action.equals("*")) {
+			} else if (operation.equals("*")) {
 				result = number1 * number2;
-			} else if (action.equals("/")) {
+			} else if (operation.equals("/")) {
 				result = number1 / number2;
-			} else if (action.equals("+")) {
+			} else if (operation.equals("+")) {
 				result = number1 + number2;
 			} else {
 				result = 0;
